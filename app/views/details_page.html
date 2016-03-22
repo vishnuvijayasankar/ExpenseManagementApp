@@ -1,0 +1,60 @@
+
+	<div class="details_page_header">
+		<h4 style="display:inline-block;">Submitted by:</h4>
+		<p id="user_name"> {{singleData.name}}</p>
+		<button id="edit_button" ng-click="edit_click()" ng-hide="detail_edit_save">Edit</button>
+		<button class="save_btn" ng-click="submit_detailpage()" ui-sref="/expense" ng-show="detail_edit_save && $root.user_type == 'user'">Save</button>
+		<button class="save_btn" ng-click="submit_detailpage()" ui-sref="/testexpense" ng-show="detail_edit_save && $root.user_type == 'admin'">Save</button>
+		<button class="save_btn" ng-click="submit_detailpage()" ui-sref="/approverexpense" ng-show="detail_edit_save && $root.user_type == 'approver'">Save</button>
+		<button id="note_button" ng-model="noteHistory" ng-click="popup()">Add Note</button>
+		<add-note ng-hide="notePopup"></add-note>
+	</div>
+	<div style="display:block">
+	<div id="details_page_inner" style="display:inline-block">	
+		<div>
+			<label for="">Date: </label>
+			<input type="text" ng-disabled="checked" ng-value="{{ 'singleData.date' }}" ng-model="singleData.date" id="date_detail">
+		</div>
+		<div>
+			<label for="">Purpose: </label>
+			<input type="text" ng-disabled="checked" ng-value="{{ 'singleData.purpose' }}" ng-model="singleData.purpose">
+		</div>
+		<div>
+			<label for="">Project: </label>
+			<select id="project" ng-disabled="checked" ng-value="{{ 'singleData.project' }}" ng-model="singleData.project" ng-options="project for project in ['Bozzuto', 'ReactorOne T and M', 'BNC', 'Service forms and Dashboard','A2A','Savenia','Innolance']"></select>
+		</div>
+		<div>
+			<label for="">Approver: </label>
+			<select id="pm"  ng-value="{{ 'singleData.pm'}}" ng-model="singleData.pm" ng-options="pm for pm in ['Nishin', 'Saju', 'Rincy', 'Vishak']" ng-disabled="checked"></select>
+		</div>
+		<div>
+			<label for="">Amount: </label>
+			<input type="number" ng-disabled="checked" ng-value="{{ singleData.rate }}" ng-model="singleData.rate" min="0">
+		</div>
+		<div>
+			<label for="">Invoice: </label>
+			<input type='file' id="invoice_upload" ng-model="currentImage" class="invoice" onchange="angular.element(this).scope().readURL(this, angular.element(this).scope().singleData)"/>
+			<a class="view_invoice" ng-hide = "singleData.invoice == 'No file chosen'" ng-click="openURL(singleData)" >View</a>
+		</div>
+		<div class="button_style">
+			<!-- <button ng-click="submit_detailpage()" ui-sref="/expense" ng-show="$root.user_type == 'user'">Submit</button>
+			<button ng-click="submit_detailpage()" ui-sref="/testexpense" ng-show="$root.user_type == 'admin'">Submit</button>
+			<button ng-click="submit_detailpage()" ui-sref="/approverexpense" ng-show="$root.user_type == 'approver'">Submit</button> -->
+			<button class="cancel_btn" ui-sref="/expense" ng-show="$root.user_type == 'user'">Cancel</button>
+			<button class="cancel_btn" ui-sref="/testexpense" ng-show="$root.user_type == 'admin'">Cancel</button>
+			<button class="cancel_btn" ui-sref="/approverexpense" ng-show="$root.user_type == 'approver'">Cancel</button>
+		</div>
+	</div>
+	<div class="history_wrap" style="display:inline-block">
+		<label for="">History: </label>
+		<section class="notes_container" >
+			<ul ng-repeat="notes in singleData.note_array">
+				<li ng-show = " '{{notes.note}}' != '0' ">
+					<p class="single_note">{{ notes.note }}</p>
+					<p class="user_type" >{{ notes.user }}</p>
+					<span class="date_time">{{ notes.time }}</span>
+				</li>
+			</ul>			
+		</section>
+	</div>
+</div>

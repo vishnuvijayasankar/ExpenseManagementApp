@@ -1,0 +1,88 @@
+{
+	"user1":
+		[
+            {
+                "emp_id":1000,
+                "name":"lavya",
+                "date": "26-01-2016",
+                "project": "Bozzuto",
+                "purpose": "cab",
+                "pm": "Vishak",
+                "rate": 200,
+                "status": 1,
+                "total " : 0,
+                "invoice" : "No file chosen",
+                "reimburse" : 0,
+                "note_array" :
+                [
+                    {
+                        "note" : "Cab expense for the month of January."
+                    }
+                ]
+		    },
+            {
+                "emp_id":1000,
+                "name":"lavya",
+                "date": "06-02-2016",
+                "project": "ReactorOne T and M",
+                "purpose": "bus",
+                "pm": "Nishin",
+                "rate": 350,
+                "status": 0,
+                "total " : 0,
+                "invoice" : "No file chosen",
+                "reimburse" : 0,
+                "note_array" : 
+                [
+                    {
+                        "note" :"Bus expense for the trip."
+                    }
+                ]
+            }
+    ],
+	"user2":
+	[
+        {
+            "emp_id":1001,
+            "name":"vishnu",
+            "date": "07-05-2016",
+            "project": "BNC",
+            "purpose": "taxi",
+            "pm": "Rinci",
+            "rate": 500,
+            "status": 1,
+            "total2 " : 0,
+            "invoice" : "No file chosen",
+            "reimburse" : 0,
+            "note_array" : 
+            [
+                {
+                    "note" : "Taxi fare from kazhakootam to thampanoor."
+                }
+            ]
+        },
+        {
+            "emp_id":1001,
+            "name":"vishnu",
+            "date": "01-04-2016",
+            "project": "Service forms and Dashboard",
+            "purpose": "auto",
+            "pm": "Saju",
+            "rate": 250,
+            "status": 1,
+            "total2 " : 0,
+            "invoice" : "No file chosen",
+            "reimburse" : 0,
+            "note_array" : 
+            [
+                {
+                    "note" : "Auto fare from vazhuthacaud office to Phase 3."
+                },
+                {
+                    "note" : "For project purpose"
+                }
+            ]
+        }
+    ]
+
+}

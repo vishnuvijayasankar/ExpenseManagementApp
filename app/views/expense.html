@@ -1,0 +1,41 @@
+<div id="btn_expense">
+	<a class="btn_add red" ng-click="showAddForm()">Add expense</a>
+</div>
+<add-data ng-hide="showAddExpense"></add-data>
+
+<div id="expensetable">
+	<div class="wrap">
+		<div class="inner_table">
+	        <table datatable="ng" dt-options="showCase.dtOptions" dt-column-defs="showCase.dtColumnDefs" class="row-border hover head">
+	        <thead>	             
+				<tr>
+					<th>Date</th>
+					<th>Purpose</th>
+					<th>Project</th>
+					<th>Approver</th>
+					<th>Amount (in Rs)</th>
+				</tr>
+			</thead>
+			<tbody>
+	            <tr ng-repeat =  "emp in fullData | filter: { name : $root.user}" ng-click="test(emp)" ui-sref="/details_page">
+					<td>
+						 {{emp.date | date : 'dd-mm-yyyy'}}
+				 	</td>
+					<td>
+						 {{ emp.purpose}}
+					</td>
+					<td>
+					 	 {{ emp.project }}
+					</td>
+					<td>
+						 {{ emp.pm }}
+					</td>
+					<td>
+						 {{ emp.rate }}
+					</td>
+				</tr>
+			</tbody>
+	    	</table>
+	    </div>
+	</div>
+</div>

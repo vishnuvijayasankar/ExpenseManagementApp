@@ -1,0 +1,464 @@
+#show_error{
+    color: red;
+    display: block;
+    width: 100%;
+}
+.img_span {
+    background-image: url('../../assets/images/sds.jpg');
+    background-size: contain;
+}
+#header {
+    color: black;
+    font-size:30px;
+    padding: 20px;
+    background: rgba(255,255,255,0.9);
+    border-bottom: 1px solid #e3e3e3;
+    text-align: center;
+}
+#footer {
+    font-size:30px;
+    padding: 20px;
+    background: #f6f6f6;
+    text-align: center;
+    color: black;
+}
+#footer p{
+    color: #444;
+    font-size: 15px;
+    text-align: center;
+    width:65%;
+    margin:auto;
+}
+#footer-wrapper {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+#view_container {
+    min-height: 475px;
+    float: left;
+}
+.shadow-div {;
+    display: none;
+    position: absolute;
+    background: #999;;
+    opacity: 0.8;
+    width: 100%;
+    z-index: 500;
+    height: 100%;
+}
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: black;
+    font-weight: 300;
+}
+.wrapper {
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+}
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 80px 0;
+    height: 400px;
+    text-align: center;
+}
+.container h1 {
+    font-size: 40px;
+    -webkit-transition-duration: 1s;
+            transition-duration: 1s;
+    -webkit-transition-timing-function: ease-in-put;
+            transition-timing-function: ease-in-put;
+    font-weight: 200;
+    color: #CB3334;
+}
+.container form {
+    padding: 20px 0;
+    position: relative;
+}
+.container form input {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    outline: 0;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background-color: #f6f6f6;
+    width: 250px;
+    border-radius: 3px;
+    padding: 10px 15px;
+    margin: 0 auto 10px auto;
+    display: block;
+    text-align: left;
+    font-size: 18px;
+    color: black;
+    -webkit-transition-duration: 0.25s;
+            transition-duration: 0.25s;
+    font-weight: 300;
+}
+.container form button {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    outline: 0;
+    background-color: white;
+    border: 0;
+    padding: 10px 15px;
+    color: #fff;
+    background-color:  #CB3334;
+    border-radius: 3px;
+    width: 250px;
+    cursor: pointer;
+    font-size: 18px;
+    -webkit-transition-duration: 0.25s;
+            transition-duration: 0.25s;
+}
+#btn_expense, #btn_testexpense {
+    margin: 10px 10px 0px 10px;
+}
+.wrap table {
+    width: 100%;
+    table-layout: fixed;
+}
+table tr td {
+    padding: 10px;
+    border: 2px solid #eee;
+    width: 100px;
+    word-wrap: break-word;
+    text-align: center;
+    cursor: pointer;
+}
+table.head tr th {
+    background: #eee;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+}
+.inner_table {
+    /*height: 170px;*/
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+#expensetable{
+    padding: 4px 8% 0 8%;
+    margin-bottom: 150px;
+}
+.btn_add {
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 15px;
+    text-decoration: none;
+    margin: 20px;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+.red {
+    background-color: #CB3334;
+}
+.red:hover {
+    background-color: #FF6656;
+}
+.form_inner label{
+    color: black;
+    width: 20%;
+    text-align: right;
+}
+.form_inner input, .form_inner select{
+    width: 55%;
+    margin-left: 5%;
+    margin-bottom: 2%;
+}
+.form_inner{
+    width: 450px;
+    height: 365px;
+    position: absolute;
+    left: 10%;
+    top: 0%;
+    z-index: 999;
+    background: #eee;
+    text-align: center;
+    margin: 10% 15% 15% 25%;
+}
+a:hover, a:focus{
+    color: #fff;
+    text-decoration: none;
+}
+.button_div {
+    width: 100%;
+}
+.log_out{
+    float: right;
+    color: #CB3334;
+    font-size: 18px;
+    text-decoration: underline;
+    vertical-align: middle;
+    padding: 10px;
+    cursor: pointer;
+}
+.log_out:hover, .log_out:focus{
+    color: #CB3334;
+    text-decoration: underline;
+}
+header p{
+    display: inline-block;
+    text-indent: -70px;
+}
+#reimburse_form{
+    padding: 60px;
+    height: 230px;
+}
+.form_inner form h3{
+    margin-bottom: 20px;
+    color: #CB3334;
+}
+.radio_class{
+    display: inline-block;
+    width: 30%;
+    vertical-align: bottom;
+}
+.radio_class input[name = "client"] {
+    width: 14px;
+}
+.view_invoice{
+    color: #CB3334;
+    cursor: pointer;
+}
+.view_invoice:hover{
+    color: #CB3334;
+}
+.popup{
+    position: absolute;
+    left: 50%;
+    width: 400px;
+    z-index: 999;
+    bottom: 50%;
+}
+.popup_inner{
+    height: 250px;
+    position: relative; 
+    left: -50%;
+    text-align: center;
+    background: #eee;
+    padding: 15px;
+}
+.popup_inner h1{
+    text-align: center;
+    margin-top: 0;
+    font-size: 32px;
+}
+.close_popup{
+    display: inline-block;
+    float: right;
+    color: #CB3334;
+    cursor: pointer;
+}
+.popup_inner h1 div{
+    font-size: 20px;
+    font-weight: bold;
+}
+.overlay{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background: #999;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    z-index: 100;
+    display: none;
+    left: 0;
+}    
+.popup_inner textarea{
+    height: 115px;
+    width: 80%;
+    margin-bottom: 10px;
+}
+.radio_class label {
+    color: black;
+}
+.display_block {
+    display: block;
+}
+.dataTables_length, .dataTables_filter, .dataTables_info, .dataTables_paginate{
+    display: inline-block;
+    margin: 0;
+}
+.dataTables_length, .dataTables_info{
+    float:left;
+    margin-bottom: 10px;
+}
+.dataTables_filter, .dataTables_paginate{
+    float:right;
+}
+.paginate_button{
+    cursor: pointer;
+}
+#details_page_inner{
+    padding: 20px;
+    margin: 0px 100px;
+    width: 40%;
+    display: inline-block;
+    position: relative;
+    float: left;
+    border: 1px solid #e3e3e3;
+    border-radius: 10px;
+}
+#details_page_inner label{
+    width: 130px;
+    padding: 0px 20px;
+    text-align: right;
+}
+#details_page_inner div{
+    padding: 5px;
+}
+.details_page_header h4, .details_page_header p{
+    display: inline-block;
+    float: left;
+}
+.details_page_header {
+    margin: 0px 80px;
+    overflow: auto;
+}
+.details_page_header p{
+    vertical-align: middle;
+    color: #CB3334;
+    font-size: 17px;
+    padding: 8px;
+    margin-top: 10px;
+}
+#edit_button {
+    width: 70px;
+    background: #CB3334;
+    border-radius: 5px;
+    margin-right: 0px;
+    float: right;
+    color: #fff;
+    outline: none;
+    border: none;
+    padding: 8px;
+    margin: 20px;
+}
+.invoice{
+    display: inline-block!important;
+    width: 30%;
+}
+.view_invoice{
+    clear: both;
+}
+.details_page_header h4, .details_page_header button{
+    margin: 20px;
+}
+.details_page_header h4{
+    margin-right: 0px;
+}
+#details_page_inner .button_style {
+    text-align: center;
+    width: 100%;
+    padding-top: 20px;
+    /*padding-right: 40%;*/
+}
+.button_style button{
+    margin: 10px;
+}
+#invoice_upload {
+    display: inline-block;
+    width: 210px;
+}
+.history_wrap{
+    display: inline-block;
+    float: left;
+    min-width: 35%;
+}
+#note_button{
+    background: #CB3334;
+    border-radius: 5px;
+    margin-right: 0px;
+    float: right;
+    color: #fff;
+    outline: none;
+    border: none;
+    padding: 8px;
+}
+.notes_container{
+    max-height: 250px;
+    overflow: auto;
+    margin-bottom: 50px;
+    border: 1px solid #e3e3e3;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.notes_container ul li:not(:last-child){
+    border-bottom: 1px solid rgba(125, 125, 125, 0.2);
+}
+button:focus{
+    outline: none;
+}
+.save_btn{
+    width: 70px;
+    background: #CB3334;
+    border-radius: 5px;
+    margin-right: 0px;
+    float: right;
+    color: #fff;
+    outline: none;
+    border: none;
+    padding: 8px;
+    margin: 20px;
+}
+#details_page_inner input, #details_page_inner select{
+    width: 40%;
+}
+#details_page_inner label{
+    width: 30%;
+}
+.cancel_btn{
+    width: 70px;
+    background: #CB3334;
+    border-radius: 5px;
+    margin-right: 0px;
+    color: #fff;
+    outline: none;
+    border: none;
+    padding: 8px;
+    margin: 20px;
+}
+.status{
+    color: #CB3334;
+}
+.user_type{
+    display: inline-block;
+    float: right;
+    color: #CB3334;
+}
+.date_time {
+    font-size: 12px;
+    font-style: italic;
+    color: #696969;
+    padding-top: 3px;
+    margin: 0px 20px;
+    float: right;
+}
+.single_note{
+    display: inline-block;
+    max-width: 230px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    margin-bottom: 0px;
+}
+@media only screen and (max-width: 700px) {
+    #details_page_inner{
+        width: 100%;
+    }
+    .history_wrap{
+        margin-left: 40px;
+        margin-right: 40px;
+        width: 60%;
+    }
+}

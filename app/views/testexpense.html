@@ -1,0 +1,42 @@
+<add-testdata ng-hide="showAddTestExpense"></add-testdata>
+<div id="expensetable">
+	<div class="wrap">
+        <div class="inner_table">
+        <p style="text-align:center; color:#CB3334; margin-top: 20px;">
+            Click on Reimbursement column to enter the corresponding reimbursement amount.
+        </p>
+        <table datatable="ng" dt-options="showCase.dtOptions" dt-column-defs="showCase.dtColumnDefs" class="row-border hover head">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Name</th>
+                    <th>Purpose</th>
+                    <th>Project</th>
+                    <th>Approver</th>
+                    <th>Account (in Rs)</th>
+                    <th>Status</th>
+                    <th>Reimbursement (in Rs)</th>
+                </tr>	
+    		</thead>
+            <tbody>
+                <tr ng-repeat="data in fullData" ng-click="test(data)">
+                    <td ui-sref="/details_page">{{ data.date }}</td>
+                    <td ui-sref="/details_page">{{ data.name }}</td>
+                    <td ui-sref="/details_page">{{ data.purpose }}</td>
+                    <td ui-sref="/details_page">{{ data.project }}</td>
+                    <td ui-sref="/details_page">{{ data.pm }}</td>
+                    <td ui-sref="/details_page">{{ data.rate }}</td>
+                    <td ui-sref="/details_page">
+                        <p ng-show = "{{ data.status }} == 1">Approved</p>
+                        <p ng-show = "{{ data.status }} == 0">Denied</p>
+                        <p ng-show = "{{ data.status }} == 2">More Details</p>
+                    </td>
+                    <!-- <td style="cursor:pointer;" ng-click="reimburse('amount_reimburse')" ng-model="amount_reimburse">{{amount_reimburse}}
+    				</td> -->
+                    <td style="cursor:pointer;" ng-model="amount_reimburse" ng-click="reimburse_amount(data)">{{ data.reimburse }}</td>
+    			</tr>
+        	</tbody>
+            </table>
+        </div>
+    </div>
+</div>

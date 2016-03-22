@@ -1,0 +1,28 @@
+<div class="form_inner">
+  <form  name="form" novalidate style="text-align:center">
+    <div class="form-group">
+        <br><h3>Add Expense</h3>
+        <p class="add_error" style="color:red"></p>
+        <label for="date">Date</label><input type="text" id="datepicker" ng-model="date"><br>
+        <label for="purpose">Purpose</label><input type="text" id="purpose" ng-model="purpose"><br>
+        <label for="project">Project</label>
+        <select id="project" ng-model="project" ng-options="project for project in ['Bozzuto', 'ReactorOne T and M', 'BNC', 'Service forms and Dashboard','A2A','Savenia','Innolance']"></select>
+        <label for="pm">Approver</label>
+        <select id="pm" ng-model="pm" ng-options="pm for pm in ['Nishin', 'Saju', 'Rincy', 'Vishak']" ng-init="pm='Nishin'"></select>
+        <label for="rate" style="width: 25%; margin-right: 5%;">Amount 
+          <select style="width: 35px;" id="currency" ng-model="currency" ng-options="currency for currency in ['$', '₹', '£']" ng-init="currency='₹'"></select> 
+        </label><input style="margin-right: 5%;margin-left: 0px;" type="number" id="rate" ng-model="rate" min="0"><br>
+        <label for="client" title="Charge back to client">CBTC</label>
+        <div class="radio_class">
+          <input type="radio" name="client" value="yes" ng-model="client">  <label for="Yes">Yes</label>
+        </div>
+        <div class="radio_class">
+          <input type="radio" name="client" value="no" ng-model="client" style="float: left;"><label for="No" style="float: left;">No</label>
+        </div>
+        <div style="padding-top:10px" class="button_div">
+          <button id="submit" ng-click="submitAdd()">Submit</button>
+          <button id="cancel" ng-click="hideAdd()">Cancel</button>
+        </div>
+    </div>
+  </form>
+</div>
