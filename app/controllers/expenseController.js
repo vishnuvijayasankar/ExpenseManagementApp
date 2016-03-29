@@ -22,7 +22,6 @@ expenseManagementApp.controller('expenseController', function($scope, $state, $h
         $scope.d = new Date();
         $scope.date_time = $scope.d.toDateString() + ' ' + $scope.d.toTimeString().split(" ")[0];
         console.log($scope.date_time);
-        debugger
         $rootScope.fullData[$rootScope.a].note_array.push({ 'note':$scope.note_model, 'user':$rootScope.user, 'time': $scope.date_time });
         $rootScope.singleData = $rootScope.fullData[$rootScope.a];
         $scope.popupClose();
@@ -68,24 +67,30 @@ expenseManagementApp.controller('expenseController', function($scope, $state, $h
             $('.add_error').show();
             $('.add_error').html('Enter all details..');
             return false;
-        } else {
-            if( $rootScope.user == "lavya") {
-                if ($scope.pm== 'Nishin') {
-                    $rootScope.fullData.push({ 'date':$scope.date, 'purpose': $scope.purpose,'project':$scope.project, 'pm':$scope.pm, 'rate':$scope.rate, 'name' : $rootScope.user, 'status' : 0, 'reimburse' : '', 'invoice' : $scope.invoice, 'note_array' : [{"note" :"0"}]});
-                }else {
-                    $rootScope.fullData.push({ 'date':$scope.date, 'purpose': $scope.purpose,'project':$scope.project, 'pm':$scope.pm, 'rate':$scope.rate, 'name' : $rootScope.user, 'status' : 1, 'reimburse' : '', 'invoice' : $scope.invoice, 'note_array' : [{"note" :"0"}]});
-                }
-            }else if( $rootScope.user == "vishnu") {
-                if ($scope.pm== 'Nishin') {
-                    $rootScope.fullData.push({ 'date':$scope.date, 'purpose': $scope.purpose,'project':$scope.project, 'pm':$scope.pm, 'rate':$scope.rate, 'name' : $rootScope.user, 'status' : 0, 'reimburse' : '', 'invoice' : $scope.invoice, 'note_array' : [{"note" :"0"}]});
-                }else {
-                    $rootScope.fullData.push({ 'date':$scope.date, 'purpose': $scope.purpose,'project':$scope.project, 'pm':$scope.pm, 'rate':$scope.rate, 'name' : $rootScope.user, 'status' : 1, 'reimburse' : '', 'invoice' : $scope.invoice, 'note_array' : [{"note" :"0"}]});
-                }
-            }
+        } //else {
+        //     if( $rootScope.user == "lavya") {
+        //         if ($scope.pm== 'Nishin') {
+        //             $rootScope.fullData.push({ 'date':$scope.date, 'purpose': $scope.purpose,'project':$scope.project, 'pm':$scope.pm, 'rate':$scope.rate, 'name' : $rootScope.user, 'status' : 0, 'reimburse' : '', 'invoice' : $scope.invoice, 'note_array' : [{"note" :"0"}]});
+        //         }else {
+        //             $rootScope.fullData.push({ 'date':$scope.date, 'purpose': $scope.purpose,'project':$scope.project, 'pm':$scope.pm, 'rate':$scope.rate, 'name' : $rootScope.user, 'status' : 1, 'reimburse' : '', 'invoice' : $scope.invoice, 'note_array' : [{"note" :"0"}]});
+        //         }
+        //     }else if( $rootScope.user == "vishnu") {
+        //         if ($scope.pm== 'Nishin') {
+        //             $rootScope.fullData.push({ 'date':$scope.date, 'purpose': $scope.purpose,'project':$scope.project, 'pm':$scope.pm, 'rate':$scope.rate, 'name' : $rootScope.user, 'status' : 0, 'reimburse' : '', 'invoice' : $scope.invoice, 'note_array' : [{"note" :"0"}]});
+        //         }else {
+        //             $rootScope.fullData.push({ 'date':$scope.date, 'purpose': $scope.purpose,'project':$scope.project, 'pm':$scope.pm, 'rate':$scope.rate, 'name' : $rootScope.user, 'status' : 1, 'reimburse' : '', 'invoice' : $scope.invoice, 'note_array' : [{"note" :"0"}]});
+        //         }
+        //     }
+        //     $('.shadow-div').removeClass('display_block');
+        //     $scope.showAddExpense = $scope.showAddExpense ? false : true;
+        // }
+        else{
+            $rootScope.fullData.push({ 'date':$scope.date, 'purpose': $scope.purpose,'project':$scope.project, 'pm':$scope.pm, 'rate':$scope.rate, 'name' : $rootScope.user, 'status' : 0, 'reimburse' : '', 'invoice' : $scope.invoice, 'note_array' : [{"note" :"0"}]});
             $('.shadow-div').removeClass('display_block');
             $scope.showAddExpense = $scope.showAddExpense ? false : true;
         }
         console.log($scope.currency);
+        debugger
     }
     $scope.hideAdd = function() {
         $('.shadow-div').removeClass('display_block');
