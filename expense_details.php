@@ -15,7 +15,7 @@
         $dbh = new PDO("mysql:host=$hostname;dbname=$db_name", $username, $password);
 
         // a query get all the records from the users table
-        $sql = "SELECT expenses.user_id as emp_id, username as name, date, project, purpose, "
+        $sql = "SELECT expenses.user_id as emp_id, username as name, DATE_FORMAT(date, '%d-%m-%Y') as date, project, purpose, "
                 . "amount as rate, approver_name as pm, expenses_status_id as status, total, invoice,"
                 . "reimburse FROM expenses "
                 . "LEFT JOIN users "

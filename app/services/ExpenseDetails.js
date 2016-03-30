@@ -4,7 +4,6 @@ expenseManagementApp.factory('ExpenseDetailsService', ['$http', '$q', function (
                 return $http.get('http://localhost/ExpenseManagementApp/expense_details.php')
                         .then(
                                 function (response) {
-                                    console.log(response.data);
                                     return response.data;
                                 },
                                 function (errResponse) {

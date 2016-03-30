@@ -1,4 +1,15 @@
 expenseManagementApp.controller('expenseController', function($scope, $state, $http, ExpenseDetailsService, $rootScope, $timeout){
+    $rootScope.singleData = [];
+    $rootScope.fullData = [];
+    ExpenseDetailsService.fetchUserDetails().then(function (response) {
+
+        for (var i = 0; i < response.user1.length; i++) {
+            $rootScope.fullData.push(response.user1[i]);
+        }
+        ;
+        console.log($rootScope.fullData);
+    })
+    
     $scope.showAddExpense = true;
     $scope.notePopup = true;
     $rootScope.user = localStorage.getItem("name");
@@ -52,6 +63,7 @@ expenseManagementApp.controller('expenseController', function($scope, $state, $h
         $scope.showAddExpense = $scope.showAddExpense ? false : true;
     }
     $scope.submitAdd = function() {
+        $rootScope.lastData = [];
         $scope.invoice = 'No file chosen';
         $scope.date = $('#datepicker').val();
         if ($scope.currency == '$') {
@@ -85,12 +97,18 @@ expenseManagementApp.controller('expenseController', function($scope, $state, $h
         //     $scope.showAddExpense = $scope.showAddExpense ? false : true;
         // }
         else{
-            $rootScope.fullData.push({ 'date':$scope.date, 'purpose': $scope.purpose,'project':$scope.project, 'pm':$scope.pm, 'rate':$scope.rate, 'name' : $rootScope.user, 'status' : 0, 'reimburse' : '', 'invoice' : $scope.invoice, 'note_array' : [{"note" :"0"}]});
+            $rootScope.fullData.push({ 'date':$scope.date, 'purpose': $scope.purpose,'project':$scope.project, 'pm':$scope.pm, 'rate':$scope.rate, 'name' : $rootScope.user, 'status' : 1, 'reimburse' : '', 'invoice' : $scope.invoice, 'note_array' : [{"note" :"0"}]});
+            $rootScope.lastData.push({ 'date':$scope.date, 'purpose': $scope.purpose,'project':$scope.project, 'pm':$scope.pm, 'rate':$scope.rate, 'name' : $rootScope.user, 'status' : 1, 'reimburse' : '', 'invoice' : $scope.invoice, 'note_array' : [{"note" :"0"}]});
             $('.shadow-div').removeClass('display_block');
             $scope.showAddExpense = $scope.showAddExpense ? false : true;
+            $http({
+                url: 'http://localhost/ExpenseManagementApp/add_expense_details.php',
+                method: "POST",
+                data: $.param($rootScope.lastData[0]),
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            })
         }
-        console.log($scope.currency);
-        debugger
+        
     }
     $scope.hideAdd = function() {
         $('.shadow-div').removeClass('display_block');
